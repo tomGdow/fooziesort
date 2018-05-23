@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vimtips</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="grid-container" id ="navbar">
+      <div class="grid-x grid-margin-x">
+        <div class="small-12 medium-10  medium-offset-1  cell">
+
+          <div class="title-bar" 
+               data-responsive-toggle="example-menu" 
+               data-hide-for="medium">
+            <button class="menu-icon" 
+                    type="button" 
+                    data-toggle="example-menu">
+            </button>
+            <div class="title-bar-title">Menu</div>
+            <span class="title-bar-right">
+              <a href="https://github.com/tomGdow">
+                <span data-tooltip 
+                      aria-haspopup="true" 
+                      class="has-tip top" 
+                      data-disable-hover="false" 
+                      tabindex="2" 
+                      title="tomgdow (github)">
+                  <img id = "gravatarSmallView" alt="Gravatar picture">
+                </span>
+              </a>
+            </span>
+          </div><!--end title bar -->
+
+          <div class="top-bar" id="example-menu"><!--begin medium and bigger-->
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">
+                  <a id ="navpic" href="https://github.com/tomGdow">
+                    <span data-tooltip 
+                          aria-haspopup="true" 
+                          class="has-tip top" 
+                          data-disable-hover="false" 
+                          tabindex="2" 
+                          title="tomgdow (github)">
+                      <img id = "gravatarMediumView" alt="Gravatar picture">
+                    </span>
+                  </a>
+
+                </li>
+                <li>
+                  <a href="./index.html">Fuzzy Sort</a>
+                </li>
+                <li>
+                  <a href="#">Coming Soon</a>
+                  <ul class="menu vertical">
+                    <li><a href="#part20">Nothing yet ...</a></li>
+                  </ul>
+                </li>
+                <li id="menu-toc-left">
+                  <a href="https://github.com/tomGdow/fooziesort">
+                    <span 
+                     data-tooltip 
+                     aria-haspopup="true" 
+                     data-disable-hover="false" 
+                     class="has-tip top" 
+                     tabindex="2" 
+                     title="fooziesort (github)">
+                      <img id= "gravatarTwoSmallView" alt="Gravatar picture">
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div> <!--end-top-bar-left-->
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li id="menu-toc-right">
+                  <a id ="navpic2"href="https://github.com/tomGdow/fooziesort">
+                    <span 
+                     data-tooltip 
+                     aria-haspopup="true" 
+                     class="has-tip top" 
+                     data-disable-hover="false" 
+                     tabindex="2" 
+                     title="fooziesort (github)">
+                      <img id ="gravatarTwoMediumView" alt="Gravatar picture">
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> <!--end-menu-->
+        </div> <!--end-cell-->
+      </div> <!--end grid-x-->
+    </div> <!--end grid-container--><!-- end navbar-->
+    <div class="grid-container"> <!--begin main content-->
+      <div class="grid-x grid-margin-x">
+        <div class="small-12 medium-8  medium-offset-2  cell">
+          <h4 class="heading-center">VimTips</h4> 
+
+          <p># Smash into Vim.  Andrew Stewart (Pluralsight)</p>
+          <p>3j	Move down three line</p>
+          <p>3k  Move up three lines</p>
+          <p>d$ 	Delete from cursor to the end of the line</p>
+          <p>u	Undo</p>
+          <p>Ctrl-R	Redo</p>
+          <p>c2/end	Change all text from cursor to the BEGINNING of second end</p>
+          <p>d2w	delete two words</p>
+          <p>:h st	Get help on any topic eg :h motion (:bd to quit. bd is 'buffer delete')</p>
+          <p>i 	Insert text</p>
+          <p>I 	Insert text at the start of line</p>
+          <p>w	Move forward one word</p>
+          <p>W	Treats continuous code as one word, and moves forward to next word</p>
+          <p>yy	Yank (copy) a line</p>
+          <p>p	Paste below cursor</p>
+          <p>P 	Paste above cursor</p>
+          <p>i	Insert text before cursor</p>
+          <p>a 	Append text after cursor</p>
+          <p>fN	Jump forward to first 'N'</p>
+          <p>3fN	Jump forward to the third 'N'</p>
+          <p>6l	Move forward 6 letters</p> 
+          <p>3w	Forward 3 words</p>
+          <p>cw	Change word</p>
+          <p>3cw	Change 3 words</p>
+          <p>r9	Replace with '9'</p>
+          <p>:e	<filename> edit a file</p>
+          <p>:syntax enable</p>
+          <p>:set syntax=Apache</p>
+          <p>:hidden</p> 
+          <p>#Tells vim to handle multiple files better</p>
+          <p>#Command mode is also known as Normal mode</p>
+          <p>d2w	d is OPERATOR</p>
+          <p>2 is COUNT</p>
+          <p>w is motion</p>
+          <p># All code folding commands begin with Z</p>
+          <p># -because it looks like a folded sheet of paper</p> 
+          <p>#One way of overcoming write only file problem</p>
+          <p>:w !sudo tee %</p>
+          <p>:w !sudo tee example.conf</p>
+          <p>#To open a file</p>
+          <p>vim -N example.conf</p>
+          <p># The -N means 'not compatible with vi'</p>
+          <p>#To Seach for, say, 'All Code'</p>
+          <p>/All Code <enter></p>
+          <p>#Puts cursor at the start of the match</p>
+          <p>#Replace with '9'</p>
+          <p>r9</p>
+          <p>#next match</p>
+          <p>n</p>
+          <p>#Previous match</p>
+          <p>N</p>
+          <p>#INCREMENTAL SEARCH (Inc Search)</p>
+          <p>:set incsearch</p>
+          <p>#HIGHLIGHT SEARCH (hlsearch)</p> 
+          <p>:set hlsearch</p>
+          <p>:nohlsearch OR :noh</p>
+          <p>#Substitute and Replace</p>
+          <p>:%s/search/replace/gc</p>
+          <p>#'g' is global</p>
+          <p>#'c' is confirm</p>
+          <p>#In a regular expression, the period matches any character</p>
+          <p>#Line numbers</p>
+          <p>:set number</p>
+          <p>12G (12-capital 'G') 	Go to the 12th line</p>
+          <p>gg			Go to the top of the document</p>
+          <p>G   (capital 'G')	Go to the end of the document</p>
+          <p>:pwd 			Check the current working directory</p>
+          <p>V			Visual mode (Line)</p>
+          <p>v			Visual mode (Character)</p>
+          <p>yy	(yank)		Copy</p>
+          <p>:b 	<name>		change buffer (try tab arrows as well)</p>																
+          <p>:bp			previous buffer</p> 
+          <p>P			Paste in text BEHIND cursor</p>
+          <p>To delete text in V	Select text and press d</p>
+          <p>To change text in V	select text and press c (goes into insert mode)</p>
+          <p>Period 			Pressing the period repeates last command.</p> 
+          <p>You will use it all the time!</p>
+          <p>:set list		(Boolean) lists tabs and end of line characters</p>
+          <p>:set nolist</p>
+          <p>:set list?		Show current value</p>
+          <p>:set list&		Reset to defaults</p>
+          <p>:set softabstop=2</p>
+          <p>:set softtabstop?</p>
+          <p>:set softtabstop&</p>
+          <p>:set sts=2		The abbreviation for softtabstop is sts</p>
+          <p>:verbose		Using the verbose command when querying</p>
+          <p>an option will tell you where it was set</p>
+          <p>:verbose set list?</p>      
+          <p>:options			Brings up vim's options screen</p>
+          <p>to tell which options have been set</p>
+          <p>:set 			See all options differing from default value</p>
+          <p>vim commands in .vimrs are just like 'normal commands but just omit</p>
+          <p>the colon!!</p>
+          <p>:set filetype		Tells you what filetype you are using</p>
+          <p>:gf			Go to file under cursor (Handy for editing code)</p>
+          <p>#Where is my .vimrc?</p>
+          <p>#see http://stackoverflow.com/questions/10921441/where-is-my-vimrc-file</p>
+          <p>:scriptnames		list all .vim files that vim has loaded for you</p>
+          <p>:e $MYVIMRC 		open and edit the current .vimrc</p>
+          <p>#buffer			The contents of a file in memory</p>
+          <p>#window			A viewport into a buffer</p>
+          <p>#Windows Commands</p>
+          <p>Ctrl-w s 		Split window horizontally</p>
+          <p>Ctrl-w v		Split window vertically</p>
+          <p>Ctrl-w j		Move focus down</p>
+          <p>Ctrl-w k		Move focus up</p>
+          <p>Ctrl-w c 		Close a window</p>
+          <p>Ctrl-w o		Close all but current</p>
+          <p>Ctrl-w w		Cycle focus (anti-clockwise)</p>
+          <p>Ctrl-w W		Cycle focus (clockwise)</p>
+          <p>Ctrl-w p		Focus previous window</p>
+          <p>Ctrl-w J		Move buffer up one window</p> 
+          <p>[ie move windows themselves]</p>
+          <p>Ctrl-w K		Move buffer down one window</p>
+          <p>Ctrl-w h		Focus on left window</p>
+          <p>Ctrl-w H		Move buffer to the left</p>
+          <p>Ctrl-w l		Focus on the right window</p>
+          <p>Ctrl-w L		Move buffer to the right</p>
+          <p>Ctrl-w t		Move to top right</p>
+          <p>Ctrl-w b		Move to bottom left</p>
+          <p>Ctrl-w r		Rotate windows clockwise</p>
+          <p>Ctrl-w R		Rotate windows anti-clockwise</p>
+          <p>#A tab holds one or more window</p>
+          <p>:tabnew</p>	
+          <p>:tabedit</p>
+          <p>:tabclose</p>
+          <p>:tabonly</p>
+          <p>:tabnext</p>
+          <p>:tabprevious</p>
+          <p>:tabfirst</p>
+          <p>:tablast</p>
+          <p>:tabmove</p>
+          <p>#buffers</p>
+          <p>:ls 			List all buffers</p>
+          <p>:b3			Go to buffer number three</p>
+          <p># + means bufer with unsaved changes</p>
+          <p># = means read only</p>
+          <p># % is buffer in the current window</p>
+          <p>:bn 			Go to next buffer</p>
+          <p>:bp			Go to pervious buffer</p>
+          <p>:bd			Buffer delete (close file)</p>
+          <p>:bf			Go to the first buffer</p>
+          <p>:bl			Go to the last buffer</p>
+          <p>:ba			Open a window for every buffer</p>
+          <p>Ctrl-^			Edit the alternate file.</p> 
+          <p>Generally this is the last file you edited</p>
+          <p>So if have nipped into another file with, say gf</p> 
+          <p>then can go back from whence one came ctrl-caret.</p>
+          <p>##Part Two, Pluralsight</p>
+          <p>h, l			Move forward, back one CHARACTER at a time</p>
+          <p>w, b			move forward, back one WORD at at a time</p>
+          <p>e			Move forward to the end of word</p>
+          <p>#To move between non-blank entities, use the movement commands in uppercase</p>
+          <p>0			Move to the start of a line</p>
+          <p>$ 			Move to the end of a line</p>
+          <p>^			Move to the FIRST NON BLANK character of a line</p>
+          <p>gm			Move to the middle of the line</p>
+          <p>#For line lines that are wrapped</p> 
+          <p>g0			Go to the beginning of line</p>
+          <p>g^			First character</p>
+          <p>g$			End of line</p>
+          <p>gm			Middle of line</p>
+          <p>#'g' is used a lot in Vim as a modifier</p>
+          <p>fx			Forward to next occurence of x</p>
+          <p>Fx 			Back to previous occurence of x</p>
+          <p>#You can repeat latest character jump with SEMI-COLON</p>
+          <p>#A COMMA repeats the last jump in the opposite direction</p>
+          <p>j,k 			Move down, up one line</p>
+          <p>#If it helps, think of 'j' as down arrow</p>
+          <p>gk			Up one screen line</p>
+          <p>-			Up to Char</p>
+          <p>+			Down char</p>
+          <p>gj			Down screen line</p>
+          <p>M			Jump to middle of screen</p>
+          <p>H			Jump to near top of screen</p>
+          <p>L			Jump to near bottom of screen</p>
+          <p>Ctrl-b			Scroll back ONE SCREEN</p>
+          <p>Ctrl-f			Scroll forward ONE SCREEN</p>
+          <p>Ctrl-u 			Scroll back 1/2 SCREEN</p>
+          <p>Ctrl-d			Scroll forward 1/2 SCREEN</p>
+          <p>zt			Scroll current line to top of screen</p>
+          <p>zz			Scroll current line to middle of screen</p>
+          <p>zb			Scroll current line to  bottom of screen</p>
+          <p>42G or 42gg		Go to line 42</p>
+          <p>gg			Takes you to the first line of the document</p>
+          <p>G			Takes you to the last line of the document</p>
+          <p>#Marks</p>
+          <p>#Vim keeps account of a few marks for you ...</p>
+          <p>#To mark the cursor postion, type 'm' followed by letter: 'ma', 'mb'</p>
+          <p>#Jump to it later with backtick and the letter</p>
+          <p>#or, alternatively, jump to start of the line with the mark with single-quote and letter</p>
+          <p>#Lower-case marks are file-specific</p>
+          <p>#Upper-case marks are global</p>
+          <p>#Ca</p>
+          <p>#For</p> 
+          <p>d't 			Deletes from cursor position to mark t</p>
+          <p>m cursor to the end of the line</p>
+          <p>#Speedy way to avoid visual mode!</p>
+          <p>:marks			Get a list of all marks</p>
+          <p>#Vims Mark</p>
+          <p>`0-`9			The position of cursor when you exit vim</p>
+          <p>'0 is the most recent</p> 
+          <p>``, "  			The position of the cursor before the last jump</p>
+          <p>`. or '.		The postition of the LAST EDIT</p>
+          <p>`` or ''		To jump back to previous cursor postion</p>
+          <p>[Can be used to conveniently jump between two spots]</p>
+          <p>#Editing text</p> 
+          <p>i			Go into insert mode and insert text at cursor position</p>
+          <p>I			Go into insert mode and insert text at first non-blank character</p>
+          <p>a			Move one character to right before going into insert mode</p>
+          <p>A			Move to end of line before going into insert mode</p>
+          <p>o			Open a new line below</p>
+          <p>O			Open a new line above</p> 
+          <p>r <char you are on>	Replaces the character you are on,</p> 
+          <p>and goes straight back into 'normal' mode</p>
+          <p>2f8			Go to second occurence of '8'</p>
+          <p>R			Go into Replace mode</p>
+          <p>#Use backspace key to restore original text</p>
+          <p>#More convenient to use change, c</p>
+          <p>c3w			Delete 3 words and switch to insert move</p>
+          <p>x			Delete character under the cursor</p>
+          <p>dd or D			Delete line</p>
+          <p>yy or Y			Yanks (copies) a line</p>
+          <p>cc or C			Change a line (delete text and then go into insert mode)</p>
+          <p>J			Join two lines  [may insert up to two spaces]</p>
+          <p>5J			Join five lines [may insert up to two spaces]</p>
+          <p>gJ			Join without inserting spaces</p>
+          <p>#Tabs</p>
+          <p>2<<			Normal mode unindent TWO LINES</p>
+          <p>2>>			Normal mode indent TWO LINES</p>
+          <p>Ctrl-d			Insert mode UN-indent a line (remove tab)</p>
+          <p>Ctrl-t			Insert mode indent (insert a tab)</p>
+          <p>(			Move to the start of a sentence</p>
+          <p>)			Move to the end of a sentence</p>
+          <p>{			Move to the start of a paragraph</p>
+          <p>}			Move to the end of a paragraph</p>
+          <p>#Can 'bounce' between matching brackets or parens with %</p> 
+          <p>#VIT, VAT and homologues</p>
+          <p>#Operator-Extend_Object</p> 
+          <p>#V is operator, I extends, T is Object</p>
+          <p>#Operators 	c	change</p>
+          <p>d	delete</p>
+          <p>y	yank</p>
+          <p>v	visual</p>
+          <p>#Extends	i	inner-object</p>
+          <p>o	all delimiters</p>
+          <p>#Object		w	word</p>
+          <p>W	Word</p>
+          <p>s	sentence</p>
+          <p>p	paragraph</p>
+          <p>t	tag</p>
+          <p>" ' { {</p>
+          <p>#To change flash[:error] to flash[:id]</p>
+          <p>ci]:id<esc></p>
+          <p>#In Visual mode, 'o' toggles which end of selection is active</p>
+          <p>#ie, toggles cursor position between beginning and end of selection</p>
+          <p>#Extremely useful.</p>  
+          <p>#Never have to give up and reselect if starting position off by one</p>
+          <p>## SEARCH and REPLACE</p>
+          <p>/		Search forward from cursor position</p>
+          <p>?		Search backwards from cursor position</p>
+          <p>n		next match in search</p>
+          <p>N		previous match</p> 
+          <p># The direction depends on which operator used to start the search</p> 
+          <p>*		Search forward for the curent WHOLE word</p>
+          <p>#		Search backwards for the current WHOLE  word</p>
+          <p>g*		Search forwards for curent word as PART of word</p>
+          <p>g#		Search backwoards for current word as PART of word</p>
+          <p>/h1/+3 		Put cursor on third line after section heading</p>
+          <p>/hello/e3 	Put cursor Three CHARACTERS after match</p>
+          <p>d/bacon/e	Delete text from cursor position to end of word 'bacon'</p>
+          <p>y?def		Yank (copy) text from current position to previous def</p>
+          <p>#Substitution</p>
+          <p>:[range]/s[ubstitute]/{pattern}/{string}/[flags] [count]</p>
+          <p>:%s/bacon/lettuce/gc	Replace 'bacon' with lettuce, global, confirm</p>
+          <p>#flags</p>
+          <p>c		confirm</p>
+          <p>i		ignore case</p>
+          <p>I		case-sensitive</p>
+          <p>g		global</p>
+          <p>n		show number of matches (non-destructive)</p>
+          <p>p		print matching lines</p>
+          <p>#		(alt) print matching lines</p>
+          <p>%		A leading percent searches all lines in the current buffer</p>
+          <p>%s/a/b		... for example</p>
+          <p>s/a/b		Omit '%' to search only the current line</p>
+          <p>:.,'a s/bacon/lettuce	Replace all occurences of 'bacon' with 'lettuce'</p>
+          <p>from the current line to the 'a' MARK</p>
+          <p>.,'a			Use a range from cursor to MARK 'a'</p>
+          <p>s/a/b			Search for 'a', replace with 'b'</p>
+          <p>#Specify a line</p>
+          <p>.		Current line</p>
+          <p>+5		5 lines down</p>
+          <p>-3		3 lines up</p>
+          <p>1		Line 1 of buffer</p>
+          <p>$		Last line of buffer</p>
+          <p>%		All lines in buffer</p>
+          <p>'t		Position of mark 't'</p>
+          <p>/pattern/	Next line where pattern matches</p>
+          <p>:s/bacon/lettuce/g10	Replace all occuences of 'bacon</p> 
+          <p>with 'lettuce' within the next 10 lines only</p>
+          <p>#Sometimes easier to go into visual mode</p>
+          <p>V		Activate visual mode for full lines</p>
+          <p>25G		Takes you to line 25</p>
+          <p>#use 'o' to toggle position of cursor (end/beginning of selection) if necessary.</p> 
+          <p>#Now type a substitution command starting with a colon</p>
+          <p>## Vim gives you the range specifier which represents the selected region</p>
+          <p>#	:'<,'>  (Range specifier)</p>
+          <p># Enter a search pattern</p>
+          <p>#	:'<,'>s/bacon/lettuce</p>
+          <p># '%' is a shortcut for all lines in current buffer</p>
+          <p>#GLOBAL COMMAND</p>
+          <p>#can use vim's powerful global command to execute a command</p>
+          <p>#on all lines that match a pattern</p>
+          <p>#Search and Execute</p>
+          <p>:[range]g[lobal]/{pattern}/[cmd]</p>
+          <p>#GLOBAL COMMAND</p>
+          <p>#can use vim's powerful global command to execute a command</p>
+          <p>#on all lines that match a pattern</p>
+          <p>#takes a form similar to search-and-replace</p>
+          <p>#unlike search, default range is whole buffer</p>
+          <p>#Search and Execute</p>
+          <p>:[range]g[lobal]/{pattern}/[cmd]</p>
+          <p>#normal {command} Execute an extended sequence</p>
+          <p>:g/vim/p</p>
+          <p>:g/re/p			GREP!</p>
+          <p>#To show all lines matching the regular expression re</p>
+          <p>#This is where the Unix grep command got its name</p>
+          <p>#	 show matches with line numbers</p>
+          <p>p	 same as above</p>
+          <p>d	 delete matching lines</p>
+          <p>y	 yank matching lines</p>
+          <p>:g/params[:foo]/#	show lines and line numbers where</p>
+          <p>params[:foo] occurs</p>
+          <p>:g/^$/d			delete blank lines</p>
+          <p>:g/pattern/+y		Yank line after the ones that match</p>
+          <p>#To execute command against lines that DONT match a pattern</p>
+          <p>use v instead of g</p>
+          <p>Some examples</p>
+          <p>:.,+10g/foo/d		delete matches from cursor through</p>
+          <p>next ten lines</p>
+          <p>:.,'f+2g/foo/#		show line numbers through two lines</p>
+          <p>after mark 'f'</p>
+          <p>:.,/bar/g/foo/d		Deletet lines through next line</p>
+          <p>mathching bar</p>
+          <p>#Commands you can execute are not restricted to deleting and</p>
+          <p>yanking</p>
+          <p>#You can also execute normal mode commands by prefixing</p> 
+          <p>#your commamds with 'normal</p>
+          <p>:g/bacon/normal OBacon is near</p>
+          <p>#insert the line 'Bacon is near' above each line that matches</p> 
+          <p>#the word bacon.</p> 
+          <p>#Regular Expressions Vim uses in Search</p>
+          <p>#In a regular expression, some characters are literal</p>
+          <p>some are special.</p> 
+          <p># Vim allows you to alter which is which with</p>
+          <p># an option called Magic</p>
+          <p># This has four levals</p> 
+          <p>Very Magic	\v	Similar to Perl, Ruby, Python</p>
+          <p>Magic		\m	The default, but awkward</p>
+          <p>No Magic	\M	Rarely used</p>
+          <p>Very No Magic	\V	Rarely used</p>
+          <p>#One area where vim's default behaviour is inconsistent and</p>
+          <p>confusing</p>
+          <p>#Invariably want Very Magic, which is similar to Perl's</p>
+          <p>#regular expression syntax</p>
+          <p>#It is NOT advisable to set this in .vimrc</p>
+          <p>#Technically you can, but vim documentation</p>
+          <p>#warns against it</p>
+          <p>#How does Magic and Very Magic differ</p>
+          <p>Very Magic	Magic</p>
+          <p>\s		\s		Whitespace	same in both</p>
+          <p>()		\(\)		Escaping        Magic only</p>
+          <p>{n, m}		\{n,m}		Quantifiers	Escape opening in						 Magic</p>
+          <p>[]		[]		Character Range No escape</p>
+          <p>*		*</p>	
+          <p>+		\+		1 or many	escape in Magic</p>
+          <p>=	        \=				Escap in Magic</p>
+          <p>#Very Magic corresponds to Unix's egrep</p>
+          <p>#Magic corresponds to Unix's grep</p>
+          <p>#Magic uses lots of backslashes inconsistently - a disaster!</p>
+          <p>#In Very Magic only literal characters are</p>
+          <p>#0-9, a-z, A-Z, and underscore</p> 
+          <p>#Turn on Very Magic with \v</p>
+          <p>#Two ways to search</p>
+          <p>/\(.y\)\{3}</p>
+          <p>/\v(.y){3}</p>
+          <p>#To repeat a search</p>
+          <p>/Ctrl-r/</p>
+          <p>#ie, Ctrl-r, FOLLOWED BY SLASH</p>
+          <p>#Ack commands in Vim</p>
+          <p>:Ack		current_user</p>
+          <p>search all files below your working directory</p>
+          <p>:cn 		Next result</p>
+          <p>:cp		Previous result</p>
+          <p>:cc3		Display third result</p>
+          <p>:ccl		Close the Quickfix window</p>
+          <p>Advanced configuration (start)</p>
+          <p>Three basic levels of configuration</p>
+          <p>#1 Basic Configuration</p>
+          <p>#2 Custom key mapping</p>
+          <p>#3 Vimscript plugins</p>
+          <p># Mappings provide a convenient method to enter a sequence of commands</p>
+          <p># with just a few keystrokes</p>
+          <p># Map one set of keystrokes to another.  When vim sees the former it</p>
+          <p># acts as if it saw the latter</p>
+          <p>#For example</p>
+          <p>:vmap > >gv</p>
+          <p># Lets take it apart</p>
+          <p>vmap	# reassigns a key in visual mode</p>
+          <p>>	# when you type this ..</p>
+          <p>>gv	# shift text right, re-select it,</p>
+          <p># and go bac to visual mode</p>
+          <p>#Map Scope</p>
+          <p>nmap	# Normal mode</p>
+          <p>imap	# Insert mode</p>
+          <p>vmap	# Visual mode</p>
+          <p>map	# Normal, Visual, and operating-pending modes</p>
+          <p>map! 	# Command and insert modes</p>
+          <p># Example</p>
+          <p># Map tab to autocomplete in insert mode</p>
+          <p>:imap <Tab> <C-N></p>
+          <p>:imap <S-Tab> <C-P></p>
+          <p># Now can use tab to bring up autocomplete and tab OR</p> 
+          <p># shift-tab throught the options</p>
+          <p># You can examine the value of existing mapping</p>
+          <p># by omitting the final argument</p>
+          <p># Remove a mapping with 'unmap'</p>
+          <p>:vunmap ></p>
+          <p># To see all mappings for a mode</p>
+          <p>use :map, :vmap, or any other mode map specifies</p>
+          <p># store all mappings in .vimrc</p> 
+          <p># Safely Swap Strokes</p>
+          <p># Safely swap colon and semicolon, say</p>
+          <p>:nnoremap :;</p>
+          <p>:noremap :;</p>
+          <p># So what keystrokes are safe to map?</p>
+          <p># Vim uses most of them already, so need to be careful</p>
+          <p># This is how to decide</p>
+          <p># Do you want to override Vim's behaviour?</p>
+          <p># 1 yes	 => do it!</p>
+          <p># 2 no   =></p> 
+          <p>Do you want carpal tunnel syndrome</p>
+          <p># 1 Yes	 => Map a meta key</p>
+          <p># 2 No	=> Use the Leader and a single key`</p>  
+          <p># The map leader is a character whose sole purpose is to</p>
+          <p># prevent your mappings from conflicting with vim's commands</p>
+          <p># Its default value is backslash,</p>
+          <p># but can set it in .vimrc to anything you feel</p>
+          <p># comfortable typing which does not clash</p>
+          <p># Note that you set it differently from other options</p>
+          <p>:let mapleader=","  	# Change the personal hotkey</p>
+          <p># Say, for example, you want to map 'Ctrl-F in insert mode</p>
+          <p># to uppercase the word before the cursor.</p>
+          <p># One way: map Ctrl-F directly</p>
+          <p>:map! <C-F>	<Esc>gUiw`]a</p>
+          <p># or, if you didn't want to wipe out Vim's default Ctrl-F,</p>
+          <p># which is scroll forward one page,</p>
+          <p># you could take it to your leader</p>
+          <p>:map! <Leader> <Esc>gUiw`]a	# type exactly as given</p>
+          <p># Try it in INSERT mode by typing backslash -F</p>
+          <p>\f</p>
+          <p># A goodie!</p>
+          <p><%= = %=></p>	
+          <p>#Abbreviations</p>
+          <p>:iab ff firefox</p>
+          <p>iab		# Declare an abbreviation for insert mode</p>
+          <p># See also 'ab' for insert, Replace, and</p> 
+          <p># Command-line modes</p>
+          <p>ff		# What you type</p>
+          <p>Firefox		# What vim inserts</p>
+          <p># A super-goodie!</p>
+          <p># Some examples</p>
+          <p>:ab teh the</p>
+          <p># For misspelled words, can type with impunity and Vim will clean up after you.</p>
+          <p>#Folding</p>
+          <p># In the classic Sci-Fi novel 'Dune' by  Frank Herbert</p>
+          <p># people learn to travel by folding space and taking a single step</p>
+          <p># onto another planet</p>
+          <p># In vim can operate on a file by folding long ranges of text</p>
+          <p># Novices use folds to put more content on the screen</p>
+          <p># Experts use folds to perform searches or global operations on</p>
+          <p># blocks of code as a single line</p>
+          <p># You may find that  your mind does not naturally think in</p>
+          <p># terms of folds.  That's OK! Some people find them indespensible</p>
+          <p># and others don't use them at all.</p>
+          <p># Vim Folding strategies</p>
+          <p>:set foldmethod=</p>
+          <p>indent		# Use spaces or tars to find foldable blocks</p>
+          <p>syntax		# Fold on language features (methods, classes)</p>
+          <p>marker 		# Fold on textual marks</p>
+          <p>diff		# Fold unchanged text</p>
+          <p>expr		# Custom, code-driven folding</p>
+          <p>manual		# Select ranges to fold</p>
+          <p># Default is manual</p>
+          <p># You will quickly tire of manual folding</p>
+          <p># Dan suggests fold by syntax or indent</p>
+          <p># Lets have a look at a Ruby file where folds are managed by</p>
+          <p># the easiest strategy -syntax</p>
+          <p># Will first do ineractively, but all may be stored in .vimrc files</p>
+          <p># As permanent defaults</p>
+          <p># 1 Syntax Folding</p>
+          <p>:set foldmethod=syntax</p>
+          <p># or use abbreviation 'fdm'</p>
+          <p>zK	# Move up a fold</p>
+          <p>zj	# Move down a fold</p>
+          <p>xM	# Close ALL folds</p>
+          <p>xc	# Close a fold</p>
+          <p>za 	# Toggle a fold (on/off)</p>
+          <p>zo	# Open a fold</p>
+          <p>zR	# Open ALL folds</p>
+          <p>zk 	# Move back up to the end of the previous fold</p>
+          <p>zi 	# Toggles folding on/off altogether</p> 
+          <p>zx	# Reset folds, if you have 'made a pickle of things'</p>
+          <p># this folds everything except the fold</p>
+          <p># at the cursor's current line</p>
+          <p>zX	# Fold everything again</p>
+          <p># 2 Indent folding</p>
+          <p># A fallback is to let Vim detect blocks elegible for folding</p>
+          <p># by using simple indentation</p>
+          <p># Css is an example of this, which will also highlight a few problems</p>
+          <p># that are easily fixed</p>
+          <p># Open a css file and set the foldmethod to "indent"</p>
+          <p>:set foldmethod=indent</p>
+          <p># Won't work as is</p>
+          <p># Two settings are relevant</p>
+          <p>:set shiftwidth=2</p>
+          <p>:set softtabstop=2</p>
+          <p># Some commands</p>
+          <p>shiftwidth=2	# The number of spaces inserted when</p>
+          <p># reindent operators or automatic indentation are used</p>
+          <p>softtabstop=2	# The number of spaces inserted when TAB is hit</p>
+          <p>:retab		# Replace all tabs with spaces in the current buffer</p>
+          <p>#Many aspects of folding are configurable</p>
+          <p>:set foldcolumn=2</p>  
+          <p># Put into .vimrc</p> 
+          <p>paper</p>
+          <p># Completion, Filtering, and Copying</p>
+          <p>Ctrl-n 			# Activation completion menu for multiple options</p>
+          <p># A goodie</p>
+          <p># Brings up floating window</p>
+          <p># Move down with Ctrl-n</p>
+          <p># Move up with Ctrl-p</p>
+          <p># Arrow keys work too</p>
+          <p># When desired word is highlighted,</p>
+          <p># hit enter or just resume typing</p>
+          <p># Filtering</p>
+          <p># sometimes it is worthwhile to filter text through an external program</p>
+          <p># such as unique.</p> 
+          <p>#Create a file (spamspam.txt) containing the following</p>
+          <p>spam</p>
+          <p>spam</p>
+          <p>milk</p>
+          <p>bacon</p>
+          <p>eggs</p>
+          <p>spam</p>
+          <p>#Select all text using Visual mode  (shift-V)</p>
+          <p>#to run the filter type</p>
+          <p>!unique     					# In general, !<filter></p>
+          <p># Four ways to run the unique filter on an entire buffer</p>
+          <p>ggVG!uniq</p>
+          <p>gg!uniq</p>
+          <p>:1,$!uniq</p>
+          <p>:%!uniq</p>
+          <p># The range may be established with visual mode or by specifying a range</p>
+          <p>in command-line mode (after the colon).</p>  
+          <p># Vim has a built on Sort command that can be used to sort</p>
+          <p># on various parts of each line</p>
+          <p># At its simplest, do range-sort, or range-sort! to reverse-sort</p>
+          <p>:1,$ sort</p>
+          <p># Automatic Indentation (Beautiful Code)</p>
+          <p>ggVG=</p>
+          <p># An absolute goodie1</p>
+          <p>#break it down</p>
+          <p>ggVG					# Visually select the entire buffer (beginning gg to end G)</p>
+          <p>=							# Format selection.  Can be used on ANY selection</p>
+          <p># use set shiftwidth to adjust the level of indentation</p>
+          <p>Text alignment</p>
+          <p>V:ce				# Center text on page</p>
+          <p># break it down</p>
+          <p>V 					# Activate Visual Mode on lines (and select a region)</p>
+          <p>ce					# Center selection on screen</p>
+          <p>:.,+3ri60 		# Select from cursor to 3 lines down</p> 
+          <p># Right align on 60 characters wide</p>
+          <p>gQ						# Reflow paragraph to 80 characters wide</p>
+          <p># But if you coding, it is easier just to use '='</p>    
+          <p># Useful tip</p>
+          <p>:set paste 				# Disable automatic indentation</p>
+          <p># Do this just before you paste</p>
+          <p># Afterwards ...</p>
+          <p>set nopaste  			# To carry on</p> 
+          <p># Copying, Yanking and Registers</p> 
+          <p>#Example Vim's registers are must more elaborate than the standard clipboard</p>
+          <p># available on your standard OS</p>
+          <p># Whenever you delete, change, search, substitute, or yank text</p> 
+          <p># vim stores it in a register</p>
+          <p># The register we have been using up to now is the default regiser</p>
+          <p># There are 8 types of register</p>
+          <p># 48 total registers</p>
+          <p># You may delete, change, substitute, search or yank to any register</p>
+          <p># CHOOSE A REGISTER WITH A DOUBLE QUOTATION MARK</p>
+          <p># To yank a link into the register called a, type:</p>
+          <p>"ayy</p>
+          <p>#Break it down</p>
+          <p>"a								# Use regiser a</p>
+          <p>yy								# Yank (copy) current line</p>
+          <p>"ap								# paste from resister a</p>
+          <p># Named registers</p>
+          <p>"a-z</p>
+          <p>"A-Z</p> 
+          <p>#Uppercase registers append new text to their contexts</p> 
+          <p>"" 								# The unnamed register. Contains the last deleted text</p>
+          <p># Whenever you delete text with 'd','c', 's' or 'x', or copy it with 'y',</p> 
+          <p># Numbered registes 1-9 always contain the text from the last delete</p>
+          <p># or change command, but you'll rarely use them.</p> 
+          <p>:registers				# show content of all registers</p>
+          <p>"+ 								# System clipboard</p>
+          <p># You can repeat your last change or yank with '.'</p>
+          <p># and you may specify a different count if you want ('2.')</p> 
+          <p>@: 								# Repeat the last COMMAND LINE COMMAND</p>
+          <p>#Break it down</p>
+          <p>@									# Exectute text as command</p>
+          <p>: 								# Use the : register as the text of the command</p>
+          <p># Macros</p>
+          <p>#An example</p>
+          <p>qadWWPjp</p>
+          <p># /Stop recording with q</p>
+          <p>qa								Start a recording named a</p>
+          <p>dW								# Delete a word</p>
+          <p>w									# go forward one word</p>
+          <p>p									# paste contents</p>
+          <p>j									# move down one line</p>
+          <p>q									# quit recoring</p>
+          <p>@a								# Execute a macro called a</p>
+          <p>5@a								# Do five times</p>
+          <p># Plugins</p>
+          <p># Vim can be extended with plugins, which are just vim scripts loaded automatically</p>
+          <p># There are two types of plugins</p>
+          <p>global						# Used for all</p>
+          <p>filetype					# Specific to a particular type of file</p> 
+          <p># Almost all vim plugins are releases in script section of</p> 
+          <p># vim.org</p>
+          <p># Most plugins are zip files which you unzip in your .vim dir</p>
+          <p># Pathogen makes things easier</p>
+          <p># Unzip to .vim/bundle directory</p>
+          <p># Check out Tim Pope's plugins (author of 'pathogen',</p>
+          <p># and many others)</p>
+          <p># Tim Pope</p>
+          <p># Git and Fugitive</p>
+          <p># A simple wrapper around the git command-line</p>
+          <p># tool, and a more integrated set of commands for use</p>
+          <p># in vim's command mode</p>
+          <p>:Git push 		# Run commands right in Vim's command area</p>
+          <p>:Gstatus			# View status in a separate split</p>
+          <p># Stage and commit within Vim</p>
+          <p># Installed git-fugitive.  Possible also need git-vim</p>
+          <p>:h fugitive</p>
+          <p>:Git					# Run an arbitrary git command</p>
+          <p># Rails Vim</p>
+          <p># Tim Pope again</p>
+          <p># Installed</p> 
+          <p># Extensive enhancements for working with Ruby-on-Rails</p>
+          <p># Overrides built-in Vim featerus and adds others for navigation, tests, etc</p>
+          <p>:gf 					# Jump to file customized for the Rails directory structure</p>
+          <p>:Rake					# Run Rake tasks with Vim</p>
+          <p># If your cursor is over a class name such as 'User', hit 'gf' to jump to file</p>
+          <p># for that model.</p>
+          <p># Or, specifically jump to associated files with</p> 
+          <p>:Rmodel</p>
+          <p>:Rcontroller</p>
+          <p>:Rview</p>
+          <p># Surround Plugin</p>
+          <p># Tim Pope</p>
+          <p># A super-goodie</p>
+          <p>#Manipulate delimites such as XML/HTML tags,</p>
+          <p># quotes, or brackets.</p>
+          <p># Easily add a delimiter around existing text, change the delimiter,</p>
+          <p># or delete it altogether</p>
+          <p>cst 				# change surrounding tags</p>
+          <p>dst				# delete surrounding tags</p>
+          <p>Vs					# Add a tag aroud text</p>
+          <p>## Addendum tgd</p>
+          <p># to add surounding tag, eg div</p>
+          <p>css<div> 	goodie!</p>
+          <p># To change a h1 to a div, say</p>
+          <p>/h1</p>
+          <p>cst <enter></p>
+          <p><div></p>
+          <p># Note the absence of a colon!</p>
+          <p># similarly (no colon)</p>
+          <p>dst</p>
+          <p># To surround with id tag - three ways</p>
+          <p>VS<id></p>
+          <p># 'S' is surround mode</p>
+          <p>v$hS<id></p>
+          <p>yss<id> 		#Normal mode</p>
+          <p># Vim Documentation</p>
+          <p># One of its greatest assets</p>
+          <p>:h</p> 
+          <p>:help</p>
+          <p>#Divided into two manuals</p>
+          <p>#1 User manual</p>
+          <p>#2 Reference manaul   (goes into nitty-gritty)</p>
+          <p>:h autocmd</p>
+          <p># If not sure wha to look for, use autocompletion</p>
+          <p>:h au<tab></p>
+          <p># Every subject is tagged with one or more keywords in an alternate color</p>
+          <p># If your cursor is on a subject tag, can jump to it with</p> 
+          <p>Ctrl-]						# Ctrl-right-bracket</p>
+          <p>Ctrl-t, Ctrl-o		# Get back to where you came from</p>
+          <p>#How to access local additions</p> 
+          <p>:h</p>
+          <p>#Now scroll down</p> 
+          <p># Plugins listed, but ONLY if you have read in docs with helptags</p>
+          <p>:Helptags</p>
+          <p># Above (pathogen command) will auto read in helptags for all</p> 
+          <p># installed plugins</p>
+          <p># TGD VIM GOODIES</p>
+          <p># To Delete from cursor to the end of file</p> 
+          <p>dG</p>
+          <p># To delete from cursor to line 885</p>
+          <p>d885G</p>
+          <p># To paste at end of line</p> 
+          <p># (a super-goodie from here)</p>
+          <p>http://superuser.com/a/121364</p>
+          <p>:nmap , $p</p>
+          <p># To open every file in a directory</p>
+          <p>args: /path/to/dir/*</p>
+          <p># To run a macro on every file in directory</p> 
+          <p>:bufdo normal @a</p>
+          <p># To add a buffer</p> 
+          <p># Insert a carriage return</p>
+          <p># See here: http://stackoverflow.com/a/1585463/499167</p>
+          <p>CTRL-V CTRL-M</p>
+          <p>#ctrl-v tells vim the next character should be inserted literally</p>
+          <p>#ctrl-m is the keystroke for carriage return</p>
+          <p># May also need to use backslash ..</p>
+          <p>:s/.../\^V^M/g</p>
+          <p>#Remove LEADING white space (A real super-goodie)</p>
+          <p>:%s/^\s\+</p>
+          <p># See here...</p>
+          <p>http://vim.wikia.com/wiki/Remove_unwanted_spaces</p>
+          <p># Remove all lines except single lines (a goodie)</p>
+          <p>:g/^\_$\n\_^$/d</p>
+          <p># Above from stackoverflow</p>
+          <p># Tabs</p> 
+          <p># To open each buffer file in new window</p>
+          <p>:tab :sball</p>
+          <p>:tab sball # at most six</p>
+          <p># without the tab modifier, opens each buffer is split view</p>
+          <p># See here</p>
+          <p>http://stackoverflow.com/a/5483206/499167</p>
+          <p>#To move between open tabs</p>
+          <p>gt, gT, 1gt 2gt</p>
+          <p>see here:</p>
+          <p>http://stackoverflow.com/a/6832397/499167</p>
+          <p># Add a directory alias</p>
+          <p>:command Cdscripts cd /home/username/.../Scripts</p>
+          <p># Must start with capital letter</p>
+          <p># See here</p>
+          <p>http://stackoverflow.com/a/20011731/499167</p>
+          <p>vim +/Choose <filename></p>
+          <p>vim +2 <filename></p>
+          <p>#Two Goodies</p>
+          <p># See here</p> 
+          <p>http://www.thegeekstuff.com/2010/11/50-linux-commands/</p>
+          <p># Gridline tips</p>
+          <p># See here:  http://stackoverflow.com/a/11846256/499167</p>
+          <p>set cursorline</p>
+          <p>set cursorcolumn</p>
+          <p>#also</p>
+          <p>set nocursorline</p>
+          <p>set nocursorcolumn</p>
+          <p># Print the name of the current file</p>
+          <p>:echo @% #current filename</p>
+          <p># comment out text</p> 
+          <p>#see here: http://stackoverflow.com/q/1676632/499167</p>
+          <p>Ctrl-v</p> 
+          <p>select block (using up-down-arrows)</p>
+          <p>Shift-I (Capital I)</p>
+          <p>insert # (or whatever)</p>
+          <p>esc</p>
+          <p>WAIT A SECOND</p>
+          <p>#Command completion in Insert mode</p>
+          <p>ctrl-p and ctrl-n</p>
+          <p># make symlink to vimo</p>
+          <p>ln -s ~/acs_bash_github/vimod/vimo vimo</p> 
+          <p># retab vim goodie</p>
+          <p>:%s/\t/  /g</p>
+          <p>## To find closing tag</p>
+          <p>v # enter visual mode</p>
+          <p>it # inner tag</p>
+          <p># and</p>
+          <p>vat # outer tag</p>
+          <p># notes on nerd</p> 
+          <p>nerd #file explorer</p> 
+          <p>ctrl-n # shortcut</p>
+          <p>cs'"</p>
+          <p>cs'<p></p>
+          <p>ds"</p>
+          <p>cst<li>  # change surrounding tag</p>
+          <p>yss<p>   # surround text by p tag</p> 
+          <p>VS<p></p>
+          <p>#note that ctrl-n in INSERT mode toggles code completion.</p>
+          <p># Smash into vim, a  second look!</p>
+          <p>c2/end # delete all code to second occurence of end</p>
+          <p>d2w #delete 2 words</p>
+          <p>I #inserts text at start of line</p>
+          <p>w #forward one words</p>
+          <p><- H</p>
+          <p>down J</p>
+          <p>L -></p>
+          <p>K Up #(Up Kildare)</p> 
+          <p>z code-folding (looks like a folded sheep of paper)</p>
+          <p>zt #scrole to top</p>
+          <p>zz #middle</p>
+          <p>zb #bottom</p>
+          <p>g-ctrl-g #Where you are in document GOODIE</p>
+          <p>ma #mark cursor position</p>
+          <p>`a</p>
+          <p>`0 #position of cursor when last exited vim.</p> 
+          <p>`` or '' #to jump back to where you were</p> 
+          <p>#period is  location of last change.</p> 
+          <p>:marks</p>
+          <p>c3w # change three works</p>
+          <p>J #join lines</p>
+          <p>gJ #join without inserting spaces</p>
+          <p>(,) #beginning, end of sentence</p>
+          <p>{,} #ditto paragraphs</p> 
+          <p>Vit</p>
+          <p>o - #toggle starting/end position,</p>
+          <p>:%s/h1//n</p>
+          <p>:%s/h1/gn ## goodie</p>
+          <p>to change only current line, leave out the '%'</p>
+          <p>V/body</p>
+          <p>:g/class/p  g/re/p  or grep</p> 
+          <p>:g/class/#  show line numbers</p>
+          <p>:g/hello/y  #yank</p>
+          <p>:g/^$/d # delete blank lines</p>
+          <p>use :v instead of :g to get lines that do not match pattern.</p> 
+          <p>ctrl-n (ctrl-n, ctrl-p) code completion</p> 
+          <p>"0 contains text from last yank!</p> 
+          <p>so paste with "0p</p>
+          <p>V25gg</p>
+          <p>V/bacon  ## two goodies</p> 
+          <p>:g/class/p  # all lines that match a pattern.</p>
+          <p>:g/class/#</p>
+          <p>/\vSidebar #Very magic search, equivalent to egrep (where magic is equivalent to grep)</p> 
+          <p>>> indent in normal mode</p> 
+          <p>ggVG ! grep hello/</p>
+          <p>:ce center</p>
+          <p>" double quotation mark selects register</p>
+          <p>"ayy</p>
+          <p>"ap</p>
+          <p>uppercase registers append text to context!</p>
+          <p>"" unnamed register #always contains the last deleted text</p> 
+          <p>yss<id> # surround with id</p>
+          <p># Mallett goodies</p>
+          <p>tilde toggles case in normal mode</p>
+          <p>gUU # make line  uppercase</p>
+          <p>g~~ # make line lowercase</p>
+          <p>e! revert to last changes</p> 
+          <p>4y # copies 4</p>
+          <p>vim +1064 smash_into_vim_psight_stewart_andrew  # open on line number goodie</p>
+          <p>vim +/^tilde smash_into_vim_psight_stewart_andrew</p>
+          <p>:x # the same as :wq</p> 
+          <p># More Mallett Goodies</p>
+          <p>:% g/foo/m$  # move all lines containing 'foo' to end of document</p> 
+          <p>"add # cut from current line to end of the 'a' register</p>
+          <p>:127,215 s/foo/bar</p>
+          <p>:.,$j # meaning "from the current line to the last line, join them all into one line"</p>  
+          <p>:%  # is synonymous with :1,$ (all the lines)</p>
+          <p>:.,$v/bar/d  # "from here to the end of the file, delete any lines which DON'T contain the string 'bar' ".</p>
+          <p>:% g/foo/s/thomas/Thomas/g   # for all lines containing 'foo' substitute 'thomas' with 'Thomas'</p>
+          <p># r! ls -lart # GOODIE read the RESULTS of a command!!</p> 
+          <p>1G!Gsort # equivalent to :1,$!sort  ##</p>
+          <p>! (bang) and :...! (ex bang) even more powerful than r!</p> 
+
+          <p>autocmd BufWritePre *.html :normal gg=G</p>
+          <p>The + command line option to vi and Vim is normally used to start the editing session</p> 
+          <p>at a given line number. Can follow the + by any valid ex command/expression</p>
+          <p>@ executes the contents of a register as if it were a vi or ex command. (obscure)</p>
+          <p>vib  # select text within parentheses</p>
+          <p>vi"  # select text within double quotes</p> 
+          <p>:r! cat article-template-bibtex.tex  # read in template</p> 
+          <p>% match tags (matchit plugin)</p>
+          <p>"+p  paste from clipboard in vim a</p>
+          <p>"+y  yank currently selected code into system keyboard.  # goodie</p>
+          <p>ctrl-x ctrl-o (*works with sass*, code completion)</p>
+          <p>edit (*do no specify a file name*) update current file (ie refresh)</p>
+          <p>:edit! (force reload, but loose any changes)</p> 
+          <p>e and e! also work.</p> 
+          <p>:bufdo e (*Reload all buffers)</p>
+          <p>// comment and un-comment  // Nerd commenter plugin</p>
+          <p>vim [count]<leader>cc //comment</p>
+          <p>[count]<leader>c<space> uncomment</p>
+          <p>Indent trick  // see https://stackoverflow.com/a/235876/499167</p>
+          <p>ma at beginning // mark</p>
+          <p>scroll down to end of what you want to indent</p>
+          <p>>'a</p>
+          <p>windo diffthis</p>
+          <p>:vnew</p>  
+          <p>vim insert empty line after } in compressed css</p>
+          <p>:%s/}/\0\r/g</p>
+          <p>:%s/}/&\r/g</p>
+          <p>see here https://stackoverflow.com/a/15000936/499167</p>
+          <p>%s/;/&\r/gc  // insert space BEFORE semicolon</p>
+          <p>Fold example</p>
+          <p>zf11j //fold 11 lines from cursor</p>
+          <p>// https://stackoverflow.com/questions/2362914/fold-function-in-vim</p>
+          <p>to fold at curly braces: zf% (a goodie)</p>
+          <p>// Paste into substitution command</p>
+          <p>yank character or text</p>
+          <p>;s/<Ctrl-R><"> // to paste text, Ctrl-R, followed by double quotes.</p> 
+          <p>// a goodie</p>
+          <p>Write a vim script</p>
+          <p>// see here</p>
+          <p>http://www.east5th.co/blog/2017/10/16/formatting-with-vim-scripts/</p>
+          <p>create a script file called myscript.vim</p>
+          <p>:%s/dog/cat/g</p>
+          <p>now execute</p>
+          <p>vim -s myscript.vim file-to-be-edited</p>
+          <p>//save vim buffer.</p>
+          <p>//Goodie</p>
+          <p>!node %:p   // open node  with current file //s is current buffer</p>
+          <p>// :p full path to curent file</p>
+          <p>In INSERT mode: // from 'let vim do the typing' video</p>
+          <p>ctrl-R <register name> //insert contents of register</p>
+          <p>// and . <dot> repeats edit</p>
+          <p>ctrl-R . // dot register contains whatever text inserted last time in insert mode.</p> 
+          <p>ctrl-a // also does the same thing (repeats insersion)</p>
+          <p>Completion (no plugins)</p>
+          <p>ctrl p // < p > for previous //default keybinding for completion</p>
+          <p>ctrl n // < n > for next</p>
+          <p>ctrl-[ is th same as <esc></p>
+          <p>still in INSERT mode</p>
+          <p>ctrl-x ctrl-l //insert a line // A goodie //Make sure set: nopaste !!</p>
+          <p>ctrl-x ctrl-f // bring up a list of filenames // another goodie</p>
+          <p>ctrl-x ctrl-[ // insert a tag</p> 
+          <p>// ctrl-x is completion mode</p>
+          <p>ctrl-x ctrl-p // change the quick brown fox to 'the slow ...'</p> 
+          <p>ctrl-x ctrl-o // omnicompletion // a super goodie</p>
+          <p>// see http://georgebrock.github.io/talks/vim-completion/</p>
+          <p>CTRL-G // show location in file and file status // goodie from vimtutor</p>
+          <p>set hsl is // set highlight seach and incremental search</p>
+          <p>// to turn off until next searh :nohls</p>  
+          <p>CTRL-D // command completion from COMMAND line // :e CTRL-D</p> 
+          <p>CTRL-W  // Jump to another window</p>
+          <p>To substitute from a register:</p>  
+          <p>s/<c-r>a/<c-r>b/gc  //where <c-r> is CTRL-R (which brings up ")</p>
+          <p>vim to reverse the postion of two split windows: ctrl-w ctrl-r</p> 
+          <p>:echom line('$')  // echo the number of lines in a file</p>
+          <p>to resize vertical splits to same size ctrl-w =</p> 
+          <p>ctrl-w q delete a split</p>
+          <p>Ctrl-w t Ctrl-w H change 2 vertical splits to horizontal</p>
+          <p>Ctrl-w t Ctrl-w K change 2 horizontal splits to vertical</p>
+          <p>!! better</p> 
+          <p>:ball</p>
+          <p>:vertical ball</p> 
+          <p>:ec system('wc -c ', "==============")</p>
+          <p>:args //get a list of open buffers</p>
+          <p>#wincmd</p>
+          <p>instead of ctrl-w = ,can use :wincmd =</p> 
+
+          </div><!--end main div-->
+          </div><!--end grid-x-->
+        </div><!--end grid-container--><!--end main content-->
+
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/what-input/dist/what-input.js"></script>
+        <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+        <script src="./js/nav.js"></script>
+  </body>
+</html>
+
+
+
