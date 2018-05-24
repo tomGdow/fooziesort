@@ -1,0 +1,24 @@
+.menu .menu-text {
+  padding: 0;
+}
+
+.title-bar-right img {
+  border: 2px solid black;
+  &:hover {
+    border: 2px solid white;
+  }
+}
+
+.has-tip {
+  border-bottom: none;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+#navpic {
+  display: none
+} 
+
+#menu-toc-right {
+  display: none;
+}

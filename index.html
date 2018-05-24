@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuzzy Sort Examples</title>
+    <!--build:css css/styles.min.css -->
+    <link rel="stylesheet" href="css/app.css">
+    <!--endbuild-->
+    
+    <script src="./js/fuzzysort.js"></script>
+    <script src="./js/testdata.js"></script>
+    <script src="./js/test.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class="grid-container" id ="navbar">
+      <div class="grid-x grid-margin-x">
+        <div class="small-12 medium-10  medium-offset-1  cell">
+
+          <div class="title-bar" 
+               data-responsive-toggle="example-menu" 
+               data-hide-for="medium">
+            <button class="menu-icon" 
+                    type="button" 
+                    data-toggle="example-menu">
+            </button>
+            <div class="title-bar-title">Menu</div>
+            <span class="title-bar-right">
+              <a href="https://github.com/tomGdow">
+                <span data-tooltip 
+                      aria-haspopup="true" 
+                      class="has-tip top" 
+                      data-disable-hover="false" 
+                      tabindex="2" 
+                      title="tomgdow (github)">
+                  <img id = "gravatarSmallView" alt="Gravatar picture">
+                </span>
+              </a>
+            </span>
+          </div><!--end title bar -->
+
+          <div class="top-bar" id="example-menu"><!--begin medium and bigger-->
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">
+                  <a id ="navpic" href="https://github.com/tomGdow">
+                    <span data-tooltip 
+                          aria-haspopup="true" 
+                          class="has-tip top" 
+                          data-disable-hover="false" 
+                          tabindex="2" 
+                          title="tomgdow (github)">
+                      <img id = "gravatarMediumView" alt="Gravatar picture">
+                    </span>
+                  </a>
+
+                </li>
+                <li>
+                  <a href="./html/vimtips.html">vimTips</a>
+                </li>
+                <li>
+                  <a href="#">Coming Soon</a>
+                  <ul class="menu vertical">
+                    <li><a href="#part20">Nothing yet ...</a></li>
+                  </ul>
+                </li>
+                <li id="menu-toc-left">
+                  <a href="https://github.com/tomGdow/fooziesort">
+                    <span 
+                     data-tooltip 
+                     aria-haspopup="true" 
+                     data-disable-hover="false" 
+                     class="has-tip top" 
+                     tabindex="2" 
+                     title="fooziesort (github)">
+                      <img id= "gravatarTwoSmallView" alt="Gravatar picture">
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div> <!--end-top-bar-left-->
+            <div class="top-bar-right">
+              <ul class="menu">
+                <li id="menu-toc-right">
+                  <a id ="navpic2"href="https://github.com/tomGdow/fooziesort">
+                    <span 
+                     data-tooltip 
+                     aria-haspopup="true" 
+                     class="has-tip top" 
+                     data-disable-hover="false" 
+                     tabindex="2" 
+                     title="fooziesort (github)">
+                      <img id ="gravatarTwoMediumView" alt="Gravatar picture">
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div> <!--end-menu-->
+        </div> <!--end-cell-->
+      </div> <!--end grid-x-->
+    </div> <!--end grid-container--><!-- end navbar-->
+
+    <div class="grid-container"> <!--begin main content-->
+      <div class="grid-x grid-margin-x">
+        <div class="small-12 medium-8  medium-offset-2  cell">
+          <h4 class="heading-center">Fuzzy Sort</h4> 
+          <!-- begin fuzzysort -->
+          <div class="jumbotron">
+            <div class="container">
+              <div id="async-buttons"></div><br>
+              <div id="buttons"></div><br>
+              <input id="input" autofocus  placeholder="books ..." />
+              <div id="results"></div>
+            </div>
+          </div> <!-- end fuzzysort -->
+          <div><!--begin credits-->
+            <h4 id ="myid">Credits</h4> 
+            <p>Based on
+            <a href="https://github.com/farzher/fuzzysort">fuzzysort</a>
+            by 
+            <a href="https://github.com/farzher">Stephen Kamenar (farzher)</a>. 
+            See 
+            <a href="https://rawgit.com/farzher/fuzzysort/master/test.html">here</a>
+            for a live demo (by 
+            <a href="https://github.com/farzher">farzher</a>)
+            </p>
+          </div><!--end credits-->
+        </div><!--end main div-->
+      </div><!--end grid-x-->
+    </div><!--end grid-container--><!--end main content-->
+
+    <!--build:js js/jquery.min.js -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <!--endbuild-->
+    <!--build:js js/what-input.min.js -->
+    <script src="node_modules/what-input/dist/what-input.js"></script>
+    <!--endbuild-->
+    <!--build:js js/foudation.min.js -->
+    <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
+    <!--endbuild-->
+    <script>
+      ;(function() {
+        const $input = $('#input')
+        const $results = $('#results')
+        const testdatakeys = Object.keys(testdata_prepared)
+        var testdatakey = 'books'
+        var searchMode = 'Ludicrous Mode'
+        var cache = {}
+        const cacheChars = 'abcdefghijklmnopqrstuvwxyz'
+        var promise, cachePromise, cacheCanceled, startms
+
+        cacheNextLevel()
+
+        function getSearchLower() { return $input.val().toLowerCase() }
+
+        function search() {
+          $input.focus()
+          const inputValue = getSearchLower()
+
+          if(cachePromise) { cachePromise.cancel() }; cacheCanceled = true
+
+          if(searchMode==='Ludicrous Mode') {
+            startms = Date.now()
+            if(cache[testdatakey]&&cache[testdatakey][inputValue]) {
+              renderCache(cache[testdatakey][inputValue])
+              cacheNextLevel()
+            } else {
+              renderResults(fuzzysort.go(inputValue, testdata_prepared[testdatakey]))
+              cacheNextLevel()
+            }
+
+          } else if(searchMode === 'Async') {
+            if(promise) promise.cancel()
+
+            startms = Date.now()
+            promise = fuzzysort.goAsync(inputValue, testdata_prepared[testdatakey])
+            promise.then(renderResults, err=>console.log(err))
+
+          } else { // Sync
+            startms = Date.now()
+            renderResults(fuzzysort.go(inputValue, testdata_prepared[testdatakey]))
+          }
+        }
+
+        function cacheNextLevel(nextIndex=0) {
+          setTimeout(function() {
+            if(nextIndex >= cacheChars.length+testdatakeys.length) return
+
+            const inputValue = getSearchLower()
+            var nextInputValue
+            var nextdatakey
+            if(nextIndex >= cacheChars.length) {
+              nextInputValue = inputValue
+              nextdatakey = testdatakeys[nextIndex - cacheChars.length]
+            } else {
+              nextInputValue = inputValue+cacheChars[nextIndex]
+              nextdatakey = testdatakey
+            }
+
+            const isCached = cache[nextdatakey]&&cache[nextdatakey][nextInputValue]
+            if(isCached) return cacheNextLevel(nextIndex + 1)
+
+            if(nextIndex===0) cacheCanceled = false
+            cachePromise = fuzzysort.goAsync(nextInputValue, testdata_prepared[nextdatakey])
+            cachePromise.then(results => {
+              if(cache[nextdatakey]===undefined) cache[nextdatakey] = {}
+              cache[nextdatakey][nextInputValue] = {total:results.total, html:resultsToHtml(results)}
+              if(!cacheCanceled) cacheNextLevel(nextIndex + 1)
+            })
+          })
+        }
+
+        function resultsToHtml(results) {
+          var html = '<ul>'
+          for (var i = 0; i < results.length; i++) {
+            const result = results[i]
+            html += `<li>
+              <span class="sortScore">${result.score}</span>
+              <span class="sortResult">${fuzzysort.highlight(result)}</span></li>`
+          }
+          html += '</ul>'
+          return html
+        }
+        function renderResults(results) {
+          const duration = Date.now() - startms
+          const header = `<p>${results.total} matches in ${duration}ms</p>`
+          const html = resultsToHtml(results)
+
+          if(cache[testdatakey]===undefined) cache[testdatakey] = {}
+          cache[testdatakey][getSearchLower()] = {total:results.total, html}
+
+          $results.html(header+html)
+        }
+        function renderCache(cached) {
+          const duration = Date.now() - startms
+          const header = `<p>${cached.total} matches in ${duration}ms <small class="text-muted"><i>cached</i></small></p>`
+          $results.html(header+cached.html)
+        }
+
+        // Run a search on input change
+        $input.on('input', search)
+        // Select input when escape pressed
+        document.onkeyup = (e) => {
+          if(e.keyCode === 27) $input.select()
+        }
+        // Focus input when any key pressed
+        document.onkeydown = (e) => {
+          $input.focus()
+        }
+
+        $('#async-buttons').html(`
+          <div class="btn" data-toggle="buttons">
+          ${['Async', 'Sync', 'Ludicrous Mode'].map(name => `
+            <label class="btn btn-secondary ${name===searchMode?'active':''}">
+            <input type="radio" name="searchMode" value="${name}"> ${name}
+            </label>
+            `).join('')}
+          </div>
+          `)
+        $(document).on('change', '[name="searchMode"]', function() {
+          searchMode = $(this).val()
+          setTimeout(search)
+        })
+
+        $('#buttons').html(`
+          <div class="btn-group" data-toggle="buttons">
+          ${testdatakeys.map(name => `
+            <label class="btn ${name===testdatakey?'active':''}">
+            </label>
+            <input type="radio"  name="testdatakeys" value="${name}"> ${name}
+            `).join('')}
+          </div>
+          `)
+        $(document).on('change', '[name="testdatakeys"]', function() {
+          testdatakey = $(this).val()
+          $input.attr('placeholder', testdatakey)
+          setTimeout(search)
+        })
+      })()
+    </script>
+    <!--build:js js/app.min.js -->
+    <script src="./js/nav.js"></script>
+    <script src="./js/app.js"></script>
+    <!--endbuild-->
+  </body>
+</html>
