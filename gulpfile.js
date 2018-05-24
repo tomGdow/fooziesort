@@ -42,7 +42,9 @@ gulp.task('sass', function() {
 });
 
 gulp.task('useref', function() {
-  return gulp.src('*.html')
+  return gulp.src([
+    '*.html'
+  ])
   .pipe(useref())
   .pipe(gulp.dest('dist'))
     .pipe($.useref({
