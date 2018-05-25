@@ -4,6 +4,7 @@
 
 A collection of personal databases searchable using [fuzzysort](https://github.com/farzher/fuzzysort).  I suspect that these will be of no use to anyone other than myself. 
 
+[Zurb Foundation](https://foundation.zurb.com/) is used to make the site responsive. 
 #### Download  
 
 - Clone this  repository
