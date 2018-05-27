@@ -75,7 +75,7 @@
             const result = results[i]
             html += `<li>
               <span class="sortScore">${result.score}</span>
-              <span class="sortResult">${fuzzysort.highlight(result)}</span></li>`
+        <span class="sortResult">${fuzzysort.highlight(result, open=$open, close=$close)}</span></li>`
           }
           html += '</ul>'
           return html
@@ -141,7 +141,10 @@ init();
 
 let b = document.getElementById('buttons');
 let a = document.getElementById('async-buttons');
+let $open ="<b>";
+let $close="</b>";
 
 b.firstChild.nextSibling.childNodes[3].checked=true;
 a.children[0].childNodes[5].firstElementChild.checked=true;
+
 
