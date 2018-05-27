@@ -148,3 +148,25 @@ b.firstChild.nextSibling.childNodes[3].checked=true;
 a.children[0].childNodes[5].firstElementChild.checked=true;
 
 
+$('input[value="vimtips"]').on('click', function(e) {
+  $open ="";
+  $close="";
+  init.resultsToHtml(results); 
+});
+
+$('input[value="pdfs"]').on('click', function(e) {
+  $open ="<b>";
+  $close="</b>";
+  init.resultsToHtml(results); 
+});
+$('input[value="books"]').on('click', function(e) {
+  $open ="<b>";
+  $close="</b>";
+  init.resultsToHtml(results); 
+});
+
+$('input[value="railsCommands"]').on('click', function(e) {
+  $open ="<b>";
+  $close="</b>";
+  init.resultsToHtml(results); 
+});
