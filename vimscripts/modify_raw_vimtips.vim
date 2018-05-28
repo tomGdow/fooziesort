@@ -1,5 +1,5 @@
 g/^$/d
-%s/^/\=printf("<a href\=\"vimtips.html#%-d\">  %d  ", line('.'), line('.'))
+%s/^/\=printf("<a href\=\"vimtips.html#%-d\"><span class=\"vimlnum\">%d<\/span>", line('.'), line('.')) 
 %s/\\/\\\\/g
 %s/\[/\\\[/g
 %s/\]/\\\]/g
