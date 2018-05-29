@@ -42,3 +42,8 @@ ul {
   margin-right: 1rem;
   color: darken(blue,20%);
 }
+#databind:empty:before {content: '\a0';}
+#databind {
+  color: darken(gray, 20%);
+  font-size: 2em;
+}
