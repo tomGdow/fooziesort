@@ -29,6 +29,10 @@ ul {
   display: none;
 }
 
+.sortResult {
+  font-size: 1.1em;
+  line-height: 2em;
+}
 #results {
   margin-top: 5px;
 }
@@ -42,8 +46,14 @@ ul {
   margin-right: 1rem;
   color: darken(blue,20%);
 }
-#databind:empty:before {content: '\a0';}
+
+#databind:empty:before {
+  content: '\a0';
+}
+
 #databind {
   color: darken(gray, 20%);
   font-size: 2em;
+  text-align: center;
+  margin-left: 1em;
 }

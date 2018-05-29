@@ -35,7 +35,7 @@ gulp.task('sass', function() {
       includePaths: sasspaths,
       outputStyle: 'compressed'
     }))
-  .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -45,23 +45,24 @@ gulp.task('useref', function() {
   return gulp.src([
     '*.html'
   ])
-  .pipe(useref())
-  .pipe(gulp.dest('dist'))
+    .pipe(useref())
+    .pipe(gulp.dest('dist'))
     .pipe($.useref({
       includePaths: sasspaths,
     }))
-  .pipe(gulpIf('app.js', uglify()))
-  .pipe(gulpIf('nav.js', uglify()))
-  .pipe(gulpIf('*.css', cssnano()))
-  .pipe(gulp.dest('dist'))
+    .pipe(gulpIf('app.js', uglify()))
+    .pipe(gulpIf('nav.js', uglify()))
+    .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulp.dest('dist'))
 });
 
 gulp.task('move-js',function(){
   return gulp.src([
     'js/fuzzysort.js',
     'js/testdata.js',
-    'js/test.js'
-    ])
+    'js/test.js',
+    'js/databinding.js'
+  ])
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -74,8 +75,8 @@ gulp.task('images', function(){
 });
 
 gulp.task('fonts', function(){
-return gulp.src('fonts/**/*')
-  .pipe(gulp.dest('dist/fonts'))
+  return gulp.src('fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('clean:dist', function() {
@@ -84,7 +85,7 @@ gulp.task('clean:dist', function() {
 
 gulp.task('deploy', function() {
   return gulp.src('./dist/**/*')
-  .pipe(ghPages());
+    .pipe(ghPages());
 });
 
 gulp.task('watch', function() {
@@ -95,12 +96,12 @@ gulp.task('watch', function() {
 
 gulp.task('build', function(callback) {
   runSequence('clean:dist', 
-  ['sass', 'useref', 'move-js',  'images', 'fonts'],
-  callback
+    ['sass', 'useref', 'move-js',  'images', 'fonts'],
+    callback
   )
 });
 
 gulp.task('default', function(callback) {
-runSequence(['sass', 'browserSync', 'watch'],
-callback)
+  runSequence(['sass', 'browserSync', 'watch'],
+    callback)
 });
