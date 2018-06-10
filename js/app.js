@@ -151,23 +151,28 @@ a.children[0].childNodes[5].firstElementChild.checked=true;
 $('input[value="vimtips"]').on('click', function(e) {
   $open ="";
   $close="";
-  init.resultsToHtml(results); 
+  setTimeout(search)
 });
 
 $('input[value="pdfs"]').on('click', function(e) {
   $open ="<b>";
   $close="</b>";
-  init.resultsToHtml(results); 
 });
 
 $('input[value="books"]').on('click', function(e) {
   $open ="<b>";
   $close="</b>";
-  init.resultsToHtml(results); 
+  setTimeout(search)
 });
 
 $('input[value="railsCommands"]').on('click', function(e) {
   $open ="<b>";
   $close="</b>";
-  init.resultsToHtml(results); 
+  setTimeout(search)
+});
+
+$('input[value="gitCommands"]').on('click', function(e) {
+  $open ="";
+  $close="";
+  setTimeout(search)
 });
