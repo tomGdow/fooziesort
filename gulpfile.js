@@ -50,6 +50,7 @@ gulp.task('useref', function() {
     .pipe($.useref({
       includePaths: sasspaths,
     }))
+    .pipe(gulpIf('init.js', uglify()))
     .pipe(gulpIf('app.js', uglify()))
     .pipe(gulpIf('nav.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
