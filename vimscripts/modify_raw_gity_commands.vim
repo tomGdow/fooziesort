@@ -1,10 +1,10 @@
 g/^$/d
 %s/</\&lt;/g
 %s/>/\&gt;/g
-%s/^/\=printf("<a href\=\"gitcommands.html#%-d\"><span class=\"vimlnum\">%d<\/span>", line('.'), line('.')) 
+%s/^/\=printf("<a href\=\"gitcommands.html#%-d\"><span class=\"vimlnum\" data-tooltip-lnum=\"lnum\">%d<\/span>", line('.'), line('.')) 
 %s/\\/\\\\/g
-%s/\[/\\\[/g
-%s/\]/\\\]/g
+"%s/\[/\\\[/g
+"%s/\]/\\\]/g
 %s/"/\\"/g
 normal gg VG
 
