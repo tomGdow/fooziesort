@@ -75,7 +75,7 @@ var init = function() {
     for (var i = 0; i < results.length; i++) {
       const result = results[i]
       html += `<li>
-        <span class="sortScore">${result.score}</span>
+        <span class="sortScore " data-tooltipcss="Search Score">${result.score}</span>
         <span class="sortResult">${fuzzysort.highlight(result, open=$open, close=$close)}</span></li>`
     }
     html += '</ul>'

@@ -1,0 +1,31 @@
+[data-tooltipcss] {
+  
+  position: relative;
+  cursor: help;
+  padding: 5px 12px;
+  text-align: center;
+   
+  &:hover {
+  background: rgba(#18836f,0.2);
+  border-radius: 4px;
+  }
+
+  
+  &::after {
+  position: absolute;
+  top: 1px;
+  right: 0%;
+  opacity: 0;
+  transition: all ease 1.3s;
+  content: attr(data-tooltipcss);
+  background: rgba(#18836f,1);
+  width: 120px;
+  border-radius: 4px;
+  padding-left: 2px;
+  color: #eee;
+}
+
+   &:hover::after {
+     opacity:1;
+   }
+}

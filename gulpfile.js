@@ -50,7 +50,6 @@ gulp.task('useref', function() {
     .pipe($.useref({
       includePaths: sasspaths,
     }))
-    .pipe(gulpIf('init.js', uglify()))
     .pipe(gulpIf('app.js', uglify()))
     .pipe(gulpIf('nav.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
@@ -62,7 +61,8 @@ gulp.task('move-js',function(){
     'js/fuzzysort.js',
     'js/testdata.js',
     'js/test.js',
-    'js/databinding.js'
+    'js/databinding.js',
+    'js/init.js'
   ])
     .pipe(gulp.dest('./dist/js'));
 });

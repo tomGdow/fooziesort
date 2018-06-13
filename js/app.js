@@ -54,3 +54,7 @@ function setNavigation() {
     $('#index').closest('li').addClass('active');
   }
 }
+
+  $( function() {
+    $( document ).tooltip();
+  } );
