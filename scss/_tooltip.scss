@@ -27,8 +27,9 @@
 
 [data-tooltip-lnum] {
   &::after {
-    top: 1px;
-    left: 2%;
+    left: 1%;
+    width: 55px;
+    font-size: 1em;
     content: attr(data-tooltip-lnum);
   }
 }
