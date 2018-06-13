@@ -7,7 +7,7 @@
 }
 
 b {
-  color: blue;
+  color: $primary-green;
 }
 
 ul {
@@ -34,7 +34,7 @@ ul {
   line-height: 2em;
 }
 #results {
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .lnum {
@@ -61,6 +61,6 @@ ul {
 hr {
 
   margin-top: 8em;
-  background-color:#18836f;
+  background-color: $primary-green;
   height: 2px; 
 }

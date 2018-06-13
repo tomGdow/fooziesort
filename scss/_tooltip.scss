@@ -4,7 +4,7 @@
   padding: 5px 12px;
   text-align: center;
   &:hover {
-    background: rgba(#18836f,0.2);
+    background: rgba($primary-green,0.2);
     border-radius: 4px;
   }
   &::after {
@@ -14,7 +14,7 @@
     opacity: 0;
     transition: all ease 1.3s;
     content: attr(data-tooltip-score);
-    background: rgba(#18836f,1);
+    background: rgba(lighten($primary-green, 10%),1);
     width: 120px;
     border-radius: 4px;
     padding-left: 2px;
