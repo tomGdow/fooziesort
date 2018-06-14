@@ -1,4 +1,4 @@
-var init = function() {
+ (function() {
 
   const $input = $('#input')
   const $results = $('#results')
@@ -136,9 +136,8 @@ var init = function() {
     $input.attr('placeholder', testdatakey)
     setTimeout(search)
   })
-}
+})()
 
-init();
 
 let b = document.getElementById('buttons');
 let a = document.getElementById('async-buttons');

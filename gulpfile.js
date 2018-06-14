@@ -62,7 +62,7 @@ gulp.task('move-js',function(){
     'js/testdata.js',
     'js/test.js',
     'js/databinding.js',
-    'js/init.js'
+    'js/initFuzzy.js'
   ])
     .pipe(gulp.dest('./dist/js'));
 });
