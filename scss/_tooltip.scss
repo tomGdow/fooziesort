@@ -1,4 +1,4 @@
-[data-tooltip-score], [data-tooltip-lnum] {
+[data-tooltip-score], [data-tooltip-lnum], [data-tooltip-pdfpath] {
   position: relative;
   cursor: help;
   padding: 5px 12px;
@@ -32,4 +32,19 @@
     font-size: 1em;
     content: attr(data-tooltip-lnum);
   }
+}
+
+[data-tooltip-pdfpath] {
+  &:hover {
+    background-color: lighten($light-gray, 40%);
+    color: $primary-green;
+  }
+
+  &::after {
+    left: 105%;
+    width: 120px;
+    font-size: 1em;
+    content: attr(data-tooltip-pdfpath);
+  }
+
 }
