@@ -3,7 +3,7 @@
   const $input = $('#input')
   const $results = $('#results')
   const testdatakeys = Object.keys(testdata_prepared)
-  var testdatakey = 'books'
+  var testdatakey = 'pdfbooks'
   var searchMode = 'Ludicrous Mode'
   var cache = {}
   const cacheChars = 'abcdefghijklmnopqrstuvwxyz'
