@@ -40,12 +40,11 @@ ul {
   margin-top: 2px;
 }
 
-.lnum {
-  margin-right: 1rem;
-  color:gray;
-}
 
 .vimlnum  {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
   margin-right: 1rem;
   color: darken(blue,20%);
 }
@@ -66,10 +65,13 @@ hr {
   margin-top: 8em;
   background-color: $primary-green;
   height: 2px; 
+
 }
 
-
 .all-copy {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
   -webkit-user-select: all; 
   -moz-user-select: all;   
   -ms-user-select: all;   
