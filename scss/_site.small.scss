@@ -61,7 +61,9 @@ ul {
 }
 
 #databind {
-  color: darken(gray, 20%);
+  //color: darken(gray, 20%);
+  color: $primary-green;
+  font-family: 'Covered By Your Grace', cursive;
   font-size: 2em;
   text-align: center;
   margin-left: 1em;
@@ -75,7 +77,8 @@ hr {
 
 .all-copy, 
 .all-copy-rails, 
-.all-copy-git {
+.all-copy-git,
+.all-copy-vimhtml {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 14px;
   line-height: 18px;

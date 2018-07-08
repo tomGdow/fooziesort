@@ -15,7 +15,8 @@ display: block;
 }
 
 #databind {
-  color: darken(gray, 20%);
+//  color: darken(gray, 20%);
+  color: $primary-green;
   font-size: 2em;
   text-align: left;
   margin-left: 1em;
