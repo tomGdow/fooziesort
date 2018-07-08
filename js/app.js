@@ -20,8 +20,8 @@ $('input[value="books"]').on('click', function(e) {
 });
 
 $('input[value="railsCommands"]').on('click', function(e) {
-  $open ="<b>";
-  $close="</b>";
+  $open ="";
+  $close="";
   setTimeout(search)
 });
 
